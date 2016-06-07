@@ -11,5 +11,6 @@ end
 
 get '/cat' do
   @rnd = rand
+  @rand_names = %w(Crap Poop Shit).sample
   erb :index
 end
