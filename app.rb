@@ -9,8 +9,15 @@ get '/secret' do
   "#{rand}"
 end
 
-get '/cat' do
+get '/random-cat' do
   @rnd = rand
-  @rand_names = %w(Crap Poop Shit).sample
+  @name = %w(Crap Poop Shit).sample
+  erb :index
+end
+
+get '/named-cat' do
+  p params
+  @rnd = rand
+  @name = params[:name]
   erb :index
 end
